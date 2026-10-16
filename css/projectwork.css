@@ -1,0 +1,163 @@
+/* Artistic projects and design work pages */
+body.work-page {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.work-page .work-section {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  flex-shrink: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: calc((100vh - (var(--layout-gap, 30px) * 5)) / 4);
+  width: 100%;
+  gap: var(--layout-gap);
+  border-radius: 2px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.015) 60px,
+    rgba(0, 0, 0, 0) 140px
+  );
+}
+
+.work-page .work-section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background-color: rgba(0, 0, 0, 0.05);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+.work-page .work-section:not(:has(.grid-item)) {
+  min-height: max(1px, calc((100vh - (var(--layout-gap, 30px) * 5)) / 4));
+}
+
+.work-page .work-section.category-hover-highlight::before {
+  opacity: 1;
+}
+
+.work-page .grid-item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  perspective: 900px;
+  text-decoration: none;
+  container-type: size;
+}
+
+.work-page .grid-item:hover {
+  z-index: 20;
+  overflow: hidden;
+}
+
+.work-page .card-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.work-page .grid-item .thumb-img {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: min(100px, 26cqw);
+  height: auto;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  transition:
+    top 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    left 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-page .grid-item:hover .thumb-img {
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.work-page .card-wrapper::after {
+  position: absolute;
+  z-index: 1;
+  top: calc(50% + (min(80px, 20.8cqw) / 2));
+  left: 50%;
+  width: min(100px, 26cqw);
+  height: min(80px, 20.8cqw);
+  background-color: rgba(18, 24, 34, 0.36);
+  content: '';
+  transform: translate(-50%, -100%) rotateX(-68deg)
+    skewX(var(--shadow-skew, -40deg)) scaleY(var(--shadow-length, 1.2));
+  transform-origin: bottom center;
+  filter: blur(12px);
+  opacity: var(--shadow-opacity, 0.85);
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.4s ease;
+}
+
+.work-page .grid-item:hover .card-wrapper::after {
+  opacity: 0;
+}
+
+.work-page [data-category][hidden] {
+  display: none !important;
+}
+
+/* Design work starts at the bottom and fills upward, right to left. */
+.design-work-page .work-section {
+  grid-auto-flow: row dense;
+  direction: rtl;
+}
+
+/* With column-reverse, larger order values appear earlier from the top. */
+.design-work-page #brandSection {
+  order: 4;
+}
+
+.design-work-page #editorialSection {
+  order: 3;
+}
+
+.design-work-page #motionSection {
+  order: 2;
+}
+
+.design-work-page #interactionSection {
+  order: 1;
+}
+
+.design-work-page .main-content {
+  flex-direction: column-reverse;
+}
+
+.work-page .main-content {
+  padding-right: 0;
+}

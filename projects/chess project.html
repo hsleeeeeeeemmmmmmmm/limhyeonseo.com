@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metabolism versus computation - Lim Hyeonseo</title>
+    <link
+      rel="stylesheet"
+      href="../css/common.css?v=nav-submenu-style-20261009"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/work-detail.css?v=work-detail-20261002"
+    />
+    <style>
+      /* 2열: 바닥 밀착 누끼 이미지 & 캡션 전용 컬럼 */
+      .work-detail-col--pieces {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .work-detail-col--pieces .pieces-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .work-detail-col--pieces .copy-caption {
+        margin-top: 10px;
+        padding-top: 0;
+        text-align: left;
+      }
+
+      .work-detail-col--pieces .copy-caption p {
+        text-align: left;
+      }
+
+      /* 3열: 상단 사진 + 설명 본문 전용 컬럼 */
+      .work-detail-col--story {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .work-detail-col--story .story-top-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .work-detail-col--story .copy-body {
+        margin-top: 18px;
+        flex: 1 1 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="work-detail-layout">
+      <!-- 공통 헤더 유지 -->
+      <div
+        class="shared-header"
+        data-active-nav=""
+        data-subnav-enabled="true"
+      ></div>
+
+      <!-- 메인 가로 스크롤 영역 -->
+      <main class="work-detail-main">
+        <div class="work-detail-scroll">
+          <div class="work-detail-track">
+            <!-- 1. 첫 번째 전체 이미지 (좌측 클로즈업 사진) -->
+            <img
+              class="work-detail-image"
+              src="../image/food chess/c2.png"
+              alt="Chess project still life close-up"
+              style="--image-height: 100%"
+            />
+
+            <!-- 2. 누끼 이미지 & 캡션 (바닥 정렬) -->
+            <aside class="work-detail-copy work-detail-col--pieces">
+              <img
+                class="pieces-image"
+                src="../image/works/chess.png"
+                alt="Chess piece sculptures"
+              />
+              <div class="copy-caption">
+                <p>
+                  Human & Ai | Hyeonseo Lim | 2024 | ceramic. plastic. food 40x
+                  40 cm
+                </p>
+              </div>
+            </aside>
+
+            <!-- 3. 상단 사진 & 설명 본문 -->
+            <aside class="work-detail-copy work-detail-col--story">
+              <img
+                class="story-top-image"
+                src="../image/food chess/c3.png"
+                alt="Pancake and citrus detail"
+              />
+              <div class="copy-body">
+                <h1>
+                  Metabolism versus computation: Staging the fundamental divide
+                  between biological life and machine logic across the
+                  chessboard.
+                </h1>
+                <p>
+                  Biological life is fundamentally defined by the metabolic
+                  process—the vulnerable, continuous act of consuming,
+                  digesting, and breaking down external matter to sustain
+                  existence. The machine, by contrast, operates entirely outside
+                  this organic vulnerability; it processes information and
+                  calculates decisions without ever having to feed or decay.
+                </p>
+                <p>
+                  Grounded in my daily ritual of playing chess against
+                  artificial intelligence, this project translates that cerebral
+                  tension into a physical confrontation between contrasting
+                  materialities. Replacing conventional chess pieces with food
+                  and artificial substances (ceramic and plastic), the work
+                  stages a visceral match between human and machine. Here, chess
+                  is no longer merely an abstract battle of strategies, but an
+                  existential collision between perishable matter that must
+                  ingest to survive and an inorganic intelligence that endures
+                  without consumption.
+                </p>
+              </div>
+            </aside>
+
+            <!-- 4. 두 번째 전체 이미지 (우측 세로 복합 사진) -->
+            <img
+              class="work-detail-image"
+              src="../image/works/chess0.png"
+              alt="Chess pieces 3D printed and metallic details"
+              style="--image-height: 100%"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/common.js?v=detail-subnav-20261009"></script>
+    <script src="../js/work-detail.js?v=work-detail-scroll-20261002"></script>
+  </body>
+</html>

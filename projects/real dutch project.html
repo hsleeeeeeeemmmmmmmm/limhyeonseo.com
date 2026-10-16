@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default Skin - Lim Hyeonseo</title>
+    <link
+      rel="stylesheet"
+      href="../css/common.css?v=nav-submenu-style-20261009"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/work-detail.css?v=work-detail-20261002"
+    />
+  </head>
+  <body>
+    <div class="work-detail-layout">
+      <!-- 공통 헤더 유지 -->
+      <div
+        class="shared-header"
+        data-active-nav=""
+        data-subnav-enabled="true"
+      ></div>
+
+      <!-- 메인 가로 스크롤 영역 -->
+      <main class="work-detail-main">
+        <div class="work-detail-scroll">
+          <div class="work-detail-track">
+            <!-- 1. 첫 번째 사진 (빨간 상자: 메인 얼굴 스틸컷) -->
+            <img
+              class="work-detail-image"
+              src="../image/real dutch/reald book.png"
+              alt="Default Skin portrait"
+              style="--image-height: 100%"
+            />
+
+            <!-- 2. 유튜브 영상 (파란 상자: 전체 높이 채움) -->
+            <div class="work-detail-video">
+              <iframe
+                src="https://www.youtube.com/embed/hDCQ8IBbwaA"
+                title="Default Skin Video"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <!-- 3. 기존 텍스트 컨테이너 그대로 재활용 (본문 + 기존 캡션) -->
+            <aside class="work-detail-copy">
+              <div class="copy-body">
+                <h1>The Zero-Point of Mimicry: From Symbol to Default</h1>
+                <p>
+                  This project is a visual and existential investigation that
+                  explores the state of “mimicry”—a refusal to be consumed as a
+                  specific socio-cultural symbol through a thorough assimilation
+                  into my external environment. Confronted by the gaze of
+                  others, whether shaped by cultural displacement or an artistic
+                  identity, I adopt statistical averageness as a survival
+                  strategy to escape the symbols imposed upon me.
+                </p>
+                <p>
+                  In this context, being average is neither an act of blindly
+                  following the crowd nor an expression of modesty; rather, it
+                  signifies a “default value,” a state of “visual silence” where
+                  all discrepancies drop to zero. Immersed within the
+                  multi-layered crowd of Amsterdam’s Dam Square, I subtly
+                  synchronize my visual codes with prevailing local dress and
+                  mass trends. Through a personal archive of various
+                  experiments—including an average Dutch face mask and a manual
+                  on ‘how to become Dutch’—I document my persistent attempts to
+                  disappear into the crowd. Paradoxically, this obsession with
+                  flawless camouflage exposes the frustration of an impossible
+                  goal, leaving behind a record of ongoing struggle rather than
+                  perfect assimilation.
+                </p>
+              </div>
+
+              <!-- 기존에 쓰던 하단 캡션 클래스 그대로 사용 -->
+              <div class="copy-caption">
+                <p>Default skin | Hyeonseo Lim | 2026 | archiving (4m 55s)</p>
+              </div>
+            </aside>
+
+            <!-- 4. 우측 대형 일러스트/사진 (기존 img 태그 그대로 사용) -->
+            <img
+              class="work-detail-image"
+              src="../image/real dutch/real dutch.png"
+              alt="Dam Square Crowd Illustration"
+              style="--image-height: 100%"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/common.js?v=detail-subnav-20261009"></script>
+    <script src="../js/work-detail.js?v=work-detail-scroll-20261002"></script>
+  </body>
+</html>

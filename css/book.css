@@ -1,0 +1,104 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* work-detail-layout과 완벽히 동일한 좌우 분할 규격 */
+.book-detail-layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row; /* 좌우 가로 분할 */
+  width: 100vw;
+  height: 100vh;
+  padding: var(--layout-gap, 24px);
+  gap: var(--layout-gap, 24px);
+  box-sizing: border-box;
+}
+
+/* 헤더는 common.css의 원래 스타일을 그대로 상속받고 절대 수축 금지 */
+.book-detail-layout .shared-header {
+  flex: 0 0 auto !important;
+  height: 100% !important;
+  overflow: visible;
+}
+
+/* 오른쪽 전체를 차지하는 뷰어 컨테이너 */
+.book-main {
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.book-stage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#flipbook {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  display: none;
+}
+
+.page-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #fff;
+}
+
+.book-loading {
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+/* 하단 내비게이션 컨트롤 */
+.book-controls {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  z-index: 10;
+  font-size: 13px;
+}
+
+.ctrl-btn {
+  background: transparent;
+  border: 1px solid #000;
+  padding: 5px 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 12px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.ctrl-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.page-counter {
+  font-family: monospace;
+  font-size: 12px;
+  opacity: 0.7;
+}

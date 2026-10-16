@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+}
+
+:root {
+  --layout-gap: clamp(8px, min(1.5625vw, 2.7778vh), 30px);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.copyright {
+  color: inherit;
+  font-size: 12px;
+}
+
+.shared-header {
+  display: contents;
+}
+
+.sidebar {
+  min-width: 100px;
+  width: 15vw;
+  max-width: 180px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: inherit;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+.main-nav ul {
+  list-style: none;
+}
+
+.main-nav li {
+  margin-bottom: 12px;
+}
+
+.main-nav a:hover,
+.nav-bottom a:hover,
+.active-nav {
+  opacity: 0.3;
+}
+
+.main-nav a,
+.nav-bottom a {
+  transition: opacity 0.25s ease;
+}
+
+.main-nav .nav-subnav {
+  max-height: 0;
+  margin: 0;
+  padding-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  visibility: hidden;
+  pointer-events: none;
+  list-style: none;
+  transition:
+    max-height 0.32s ease,
+    margin 0.32s ease,
+    padding 0.32s ease,
+    opacity 0.24s ease,
+    transform 0.32s ease,
+    visibility 0s linear 0.32s;
+}
+
+.main-nav li.submenu-open > .nav-subnav,
+.main-nav li.submenu-current > .nav-subnav {
+  max-height: 180px;
+  margin: 0 0 4px;
+  padding-top: 8px;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.main-nav .nav-subnav li {
+  margin: 0 0 6px;
+}
+
+.main-nav .nav-subnav a {
+  display: inline-block;
+  color: #7b7b7b;
+  font-size: inherit;
+  text-align: left;
+}
+
+.nav-bottom p {
+  margin-top: 8px;
+}
+
+#intro-hover-preview {
+  position: absolute;
+  z-index: 10;
+  right: auto;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  align-items: flex-end;
+  justify-content: center;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+.intro-face-preview__image {
+  display: block;
+  width: auto;
+  max-height: 240px;
+  object-fit: contain;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.25s ease;
+}

@@ -1,0 +1,285 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+:root {
+  --detail-image-height: min(58vh, 560px);
+  --detail-item-width: min(70vw, 800px);
+  /* 1920px 기준 30px 반응형 갭 */
+  --detail-item-gap: clamp(14px, 1.5625vw, 30px);
+  --detail-copy-gap: 16px;
+}
+
+.work-detail-layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: var(--layout-gap);
+  gap: var(--layout-gap);
+  box-sizing: border-box;
+}
+
+.work-detail-main {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   화이트 그라데이션 오버레이 (단일 정의 + 슬라이드 트랜지션)
+   ========================================================================== */
+.work-detail-main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(300px, 8vw, 1500px);
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* 끝에 도달했을 때 오른쪽으로 미끄러져 나가며 페이드아웃 */
+.work-detail-main.is-at-end::after {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.work-detail-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-x;
+}
+
+.work-detail-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.work-detail-scroll.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.work-detail-scroll.is-dragging iframe {
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   가로 트랙
+   ========================================================================== */
+.work-detail-track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--detail-item-gap);
+  width: max-content;
+  min-width: 100%;
+  height: 100%;
+}
+
+.work-detail-track > * {
+  margin: 0;
+}
+
+/* 1. 이미지 */
+.work-detail-image {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  height: var(--image-height, 100%);
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* 2. 비디오 (기본 가로 스크롤 페이지 기준) */
+.work-detail-video {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  height: 100%;
+  max-height: 100%;
+  aspect-ratio: 9 / 16;
+  width: auto;
+  max-width: min(500px, 80vw);
+  min-width: 150px;
+}
+
+.work-detail-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 3. 기본 텍스트 박스: 폭 설정 및 폰트 규칙 */
+.work-detail-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 clamp(250px, 22vw, 400px);
+  width: clamp(250px, 22vw, 400px);
+  min-width: 250px;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.work-detail-copy .copy-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  text-align: left;
+}
+
+.work-detail-copy .copy-body::-webkit-scrollbar {
+  display: none;
+}
+
+.work-detail-copy .copy-body h1 {
+  margin: 0 0 16px 0;
+  font-size: clamp(15px, 1.1vw, 18px);
+  font-weight: normal;
+  line-height: 1.35;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.work-detail-copy .copy-body p {
+  margin: 0 0 14px 0;
+  font-size: clamp(12px, 0.85vw, 14px);
+  line-height: 1.5;
+  text-align: left;
+}
+
+.work-detail-copy .copy-body p:last-child {
+  margin-bottom: 8px;
+}
+
+.work-detail-copy .copy-caption {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding-top: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.work-detail-copy .copy-caption p {
+  margin: 0;
+  padding: 0;
+  font-size: clamp(7px, 0.8vw, 11px);
+  line-height: 1.3;
+  opacity: 0.85;
+  text-align: left;
+  white-space: normal;
+}
+
+/* ==========================================================================
+   상하 분할 뷰
+   ========================================================================== */
+.work-detail-split-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1 1 100%;
+  gap: var(--detail-item-gap);
+  box-sizing: border-box;
+}
+
+.work-detail-split-view .work-detail-video {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: auto;
+}
+
+.work-detail-split-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--detail-item-gap);
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.work-detail-split-columns .work-detail-copy {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+}
+
+/* 분할 뷰 단독일 때 불필요한 가로 스크롤 및 그라데이션 차단 */
+.work-detail-track:has(> .work-detail-split-view:only-child) {
+  width: 100%;
+  min-width: 0;
+}
+
+.work-detail-main:has(.work-detail-split-view:only-child)::after {
+  display: none;
+}
+
+/* ==========================================================================
+   책/출판물 뷰어 이동 링크 (Fairytale 등)
+   ========================================================================== */
+.work-detail-book-link {
+  position: relative;
+  display: block;
+  height: 100%;
+  flex: 0 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.work-detail-book-link::after {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.24);
+  color: #fff;
+  content: attr(data-hover-text);
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+  /*text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);*/
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-detail-book-link:hover::after,
+.work-detail-book-link:focus-visible::after {
+  opacity: 1;
+}
+
+.work-detail-book-link img {
+  pointer-events: none;
+}

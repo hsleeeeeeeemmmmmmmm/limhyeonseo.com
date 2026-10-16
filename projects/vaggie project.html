@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Root the Rhythm - Lim Hyeonseo</title>
+    <link
+      rel="stylesheet"
+      href="../css/common.css?v=nav-submenu-style-20261009"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/work-detail.css?v=work-detail-20261002"
+    />
+    <style>
+      /* Root the Rhythm 전용: 중앙 컬럼 상·하단 2단 분할 레이아웃 */
+      .work-detail-copy--root {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .work-detail-copy--root .copy-section-top {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        min-height: 0;
+      }
+
+      .work-detail-copy--root .copy-section-top .copy-body {
+        overflow-y: auto;
+      }
+
+      .work-detail-copy--root .circuit-image-box {
+        margin-top: 18px;
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 auto;
+      }
+
+      .work-detail-copy--root .circuit-image {
+        width: 100%;
+        height: auto;
+        max-height: 38vh;
+        object-fit: contain;
+        display: block;
+      }
+
+      .work-detail-copy--root .copy-caption {
+        padding-top: 8px;
+        margin-top: 0;
+        text-align: left;
+      }
+
+      .work-detail-copy--root .copy-caption p {
+        text-align: left;
+      }
+
+      /* 우측 비디오 / 추가 콘텐츠 슬롯 (파란 박스 영역) */
+      .work-detail-slot-blue {
+        height: 100%;
+        aspect-ratio: 9 / 16;
+        flex: 0 0 auto;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .work-detail-slot-blue iframe,
+      .work-detail-slot-blue video {
+        width: 100%;
+        height: 100%;
+        border: none;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="work-detail-layout">
+      <!-- 공통 헤더 유지 -->
+      <div
+        class="shared-header"
+        data-active-nav=""
+        data-subnav-enabled="true"
+      ></div>
+
+      <!-- 메인 가로 스크롤 영역 -->
+      <main class="work-detail-main">
+        <div class="work-detail-scroll">
+          <div class="work-detail-track">
+            <!-- 1. 첫 번째 이미지: 잔디밭 위 대형 텍스타일 설치 컷 -->
+            <img
+              class="work-detail-image"
+              src="../image/cine/ck3.png"
+              alt="Root the Rhythm interactive textile installation on lawn"
+              style="--image-height: 100%"
+            />
+
+            <!-- 2. 중앙 텍스트 및 아두이노 회로 컬럼 -->
+            <aside class="work-detail-copy work-detail-copy--root">
+              <!-- 상단 설명문 본문 및 1차 캡션 -->
+              <div class="copy-section-top">
+                <div class="copy-body">
+                  <h1>
+                    A playful, tactile instrument: Turning children's touch into
+                    a living symphony with nature.
+                  </h1>
+                  <p>
+                    Root the Rhythm_ is an interactive textile installation
+                    designed as a tactile, oversized musical toy for children.
+                    Blending soft materials with responsive sound technology,
+                    the project invites young audiences to explore music through
+                    intuitive, bodily engagement rather than structured rules.
+                  </p>
+                  <p>
+                    Standing at human scale, these soft textile forms respond to
+                    hugs, taps, and gentle touches, transforming everyday
+                    tactile play into harmonious natural sounds. As children
+                    explore the forms together, their collaborative movements
+                    generate a layered, ever-evolving melody. _Root the Rhythm_
+                    encourages sensory curiosity and attentive listening,
+                    offering children an imaginative playground where they
+                    discover that their own playful energy can harmonize with
+                    the rhythms of the natural world.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 하단 아두이노 및 3D 모델링 누끼 이미지 + 최하단 캡션 -->
+              <div class="circuit-image-box">
+                <img
+                  class="circuit-image"
+                  src="../image/works/ck.png"
+                  alt="Root the Rhythm interactive circuitry and sensor diagram"
+                />
+                <div class="copy-caption">
+                  <p>
+                    Root the Rhythm | Hyeonseo Lim | 2026 | textile, arduino,
+                    banding sensor
+                  </p>
+                </div>
+              </div>
+            </aside>
+
+            <!-- 3. 두 번째 이미지: 잔디밭 위 아이들 인터랙션 사진 -->
+            <img
+              class="work-detail-image"
+              src="../image/cine/ck1.png"
+              alt="Children interacting with Root the Rhythm soft instruments"
+              style="--image-height: 100%"
+            />
+
+            <!-- 4. 우측 파란 박스 영역: 세로형 비디오 프레임 슬롯 -->
+            <div class="work-detail-slot-blue">
+              <iframe
+                src="https://www.youtube.com/embed/gVUbXVw2xw8"
+                title="Root the Rhythm video documentation"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/common.js?v=detail-subnav-20261009"></script>
+    <script src="../js/work-detail.js?v=work-detail-scroll-20261002"></script>
+  </body>
+</html>

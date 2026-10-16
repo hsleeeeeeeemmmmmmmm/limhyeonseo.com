@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Viewer - Lim Hyeonseo</title>
+
+    <link rel="stylesheet" href="css/common.css?v=nav-submenu-style-20261009" />
+    <link rel="stylesheet" href="css/book.css?v=20261010" />
+
+    <!-- PDF & PageFlip CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+  </head>
+  <body>
+    <!-- 기존 work-detail-layout과 정확히 같은 2열 flex 구조 -->
+    <div class="book-detail-layout">
+      <!-- 1. 왼쪽 고정 사이드바 헤더 (공통 CSS 규칙 온전히 유지) -->
+      <div
+        class="shared-header"
+        data-active-nav=""
+        data-subnav-enabled="true"
+      ></div>
+
+      <!-- 2. 오른쪽 메인 스테이지 (남은 영역 100% 차지) -->
+      <main class="book-main">
+        <div class="book-stage">
+          <div id="loading" class="book-loading">Loading Book...</div>
+          <div id="flipbook"></div>
+
+          <div class="book-controls">
+            <span class="page-counter" id="page-counter">Page - / -</span>
+            <button
+              type="button"
+              class="ctrl-btn"
+              onclick="history.back()"
+              style="margin-left: 12px"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/common.js?v=detail-subnav-20261009"></script>
+    <script src="js/book.js?v=two-page-mouse-flip-20261010"></script>
+  </body>
+</html>

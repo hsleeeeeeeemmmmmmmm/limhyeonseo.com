@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1450 - Lim Hyeonseo</title>
+    <link
+      rel="stylesheet"
+      href="../css/common.css?v=nav-submenu-style-20261009"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/work-detail.css?v=work-detail-20261002"
+    />
+    <style>
+      /* 1450 전용 레이아웃: 중앙 컬럼 상하 분할 */
+      .work-detail-copy--split {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .work-detail-copy--split .top-section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .work-detail-copy--split .card-preview-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .work-detail-copy--split .copy-caption {
+        padding-top: 0;
+        margin-top: 0;
+        text-align: left;
+      }
+
+      .work-detail-copy--split .copy-caption p {
+        text-align: left;
+      }
+
+      .work-detail-copy--split .bottom-section {
+        margin-top: auto;
+        flex: 0 1 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="work-detail-layout">
+      <!-- 공통 헤더 유지 -->
+      <div
+        class="shared-header"
+        data-active-nav=""
+        data-subnav-enabled="true"
+      ></div>
+
+      <!-- 메인 가로 스크롤 영역 -->
+      <main class="work-detail-main">
+        <div class="work-detail-scroll">
+          <div class="work-detail-track">
+            <!-- 1. 첫 번째 이미지 (좌측 설치 조형물 및 프레임 액자) -->
+            <img
+              class="work-detail-image"
+              src="../image/newlaw/nl0.png"
+              alt="1450 Installation and framed cards"
+              style="--image-height: 100%"
+            />
+
+            <!-- 2. 중앙 영역 (상단: 카드 이미지 + 캡션 / 하단: 본문 설명문) -->
+            <aside class="work-detail-copy work-detail-copy--split">
+              <!-- 상단 파트 -->
+              <div class="top-section">
+                <img
+                  class="card-preview-image"
+                  src="../image/newlaw/nl1.png"
+                  alt="Int'l Student FX Card preview"
+                />
+                <div class="copy-caption">
+                  <p>
+                    1450 | Hyeonseo Lim | 2025 | plastic, sticker, paper, wax,
+                    wood | 594 x 841mm
+                  </p>
+                </div>
+              </div>
+
+              <!-- 하단 파트 (바닥 밀착 본문) -->
+              <div class="copy-body bottom-section">
+                <h1>
+                  Speculating financial immunity: Confronting systemic currency
+                  volatility and the precariat state of international students.
+                </h1>
+                <p>
+                  1450 investigates the vulnerability of international students
+                  caught in macroeconomic currents beyond their agency. When
+                  tuition was originally paid, the exchange rate stood at 1,450
+                  KRW to the Euro; by the time this project unfolded, it had
+                  surged to over 1,650—an arbitrary escalation exceeding 15%.
+                </p>
+                <p>
+                  In that period, opening currency charts became a compulsive
+                  daily ritual, transmuting academic life into the high-stakes
+                  precarity of day trading. This work interrogates the inherent
+                  injustice of subjecting student livelihood and educational
+                  access to sovereign financial volatility. Utilizing mundane,
+                  bureaucratic materials alongside delicate textures—paper,
+                  stickers, plastic, wood, and wax—the work crystallizes this
+                  psychological strain into a speculative legislative proposal:
+                  a regulatory framework to insulate students from volatile
+                  exchange fluctuations. _1450_ positions policy not merely as
+                  administrative text, but as a protective armor against
+                  economic fragility.
+                </p>
+              </div>
+            </aside>
+
+            <!-- 3. 두 번째 이미지 (우측 세로형 규정 및 6단계 안내 그래픽 포스터) -->
+            <img
+              class="work-detail-image"
+              src="../image/newlaw/nl2.png"
+              alt="International Student Fixed Rate Card Rules and Regulations"
+              style="--image-height: 100%"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/common.js?v=detail-subnav-20261009"></script>
+    <script src="../js/work-detail.js?v=work-detail-scroll-20261002"></script>
+  </body>
+</html>
