@@ -149,10 +149,10 @@ if (headerSlot) {
       if (hoverPreview) {
         const faceImages = {
           default: 'image/hy face/Kinh.png',
-          logo: '/image/hy face/western african.png', // Lim Hyeonseo
-          cv: '/image/hy face/Scandinavian.png', // CV
-          design: '/image/hy face/asian.png', // Design Work
-          artistic: '/image/hy face/northern indian.png', // Artistic Project
+          logo: 'image/hy face/western african.png', // Lim Hyeonseo
+          cv: 'image/hy face/Scandinavian.png', // CV
+          design: 'image/hy face/asian.png', // Design Work
+          artistic: 'image/hy face/northern indian.png', // Artistic Project
         };
 
         // 단일 이미지 생성
